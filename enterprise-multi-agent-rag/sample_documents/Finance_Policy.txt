@@ -1,0 +1,3 @@
+EnterpriseRAG Demo Finance Policy
+
+Expense reports must be submitted within 30 calendar days of the expense. Purchases above USD 5,000 require two approvers. Reimbursements are paid after Finance validates receipts and the cost center.

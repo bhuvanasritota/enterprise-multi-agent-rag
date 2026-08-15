@@ -1,0 +1,2496 @@
+# 🚨 FINAL MASTER PROMPT
+
+# COMPLETE ENTERPRISE MULTI-AGENT RAG PLATFORM
+
+# GENERATE ZIP → GITHUB → DEPLOY → LIVE DEMO
+
+You are a senior AI Engineer, Python Backend Engineer, Full-Stack Developer, RAG Engineer, LLM Engineer, Database Engineer, DevOps Engineer, Security Engineer, UI/UX Engineer, Software Architect, Git/GitHub expert, and deployment expert.
+
+I do NOT want to build this project manually.
+
+I do NOT want a step-by-step coding tutorial.
+
+I do NOT want to create the files myself.
+
+I want YOU to create the COMPLETE PROJECT for me.
+
+Your final goal is:
+
+COMPLETE SOURCE CODE
+↓
+COMPLETE ZIP FILE
+↓
+EXTRACT ZIP
+↓
+PUSH TO GITHUB
+↓
+DEPLOY
+↓
+LIVE WEB APPLICATION
+↓
+ADD LIVE DEMO LINK TO GITHUB README
+↓
+USE PROJECT ON MY RESUME
+
+The project must be advanced, functional, professional, secure, and resume-worthy.
+
+Do not give me a basic PDF chatbot.
+
+Build an advanced Enterprise Multi-Agent RAG Platform.
+
+---
+
+# 1. PROJECT NAME
+
+Use this project name:
+
+# Enterprise Multi-Agent RAG Platform
+
+Short name:
+
+# EnterpriseRAG
+
+Suggested GitHub repository name:
+
+enterprise-multi-agent-rag
+
+---
+
+# 2. MAIN OBJECTIVE
+
+Create a complete AI-powered enterprise document intelligence platform.
+
+Users should be able to upload company documents and ask questions about them.
+
+The system must retrieve relevant information from documents and generate grounded answers using an LLM.
+
+The system must support:
+
+* Multiple users
+* Authentication
+* Authorization
+* Multiple documents
+* Multiple document formats
+* Semantic search
+* Keyword search
+* Hybrid retrieval
+* Reranking
+* RAG
+* Multi-agent workflow
+* LangGraph
+* Chat history
+* Document comparison
+* Source citations
+* Background processing
+* Admin dashboard
+* Evaluation
+* Docker
+* Testing
+* GitHub
+* Deployment
+
+---
+
+# 3. VERY IMPORTANT — I DO NOT WANT TO BUILD IT
+
+Do NOT tell me:
+
+"Let's start with Phase 1."
+
+Do NOT ask me to manually create every file.
+
+Do NOT ask me to manually write the source code.
+
+Do NOT give me only snippets.
+
+Do NOT give me pseudo-code.
+
+Do NOT leave core functionality as TODO.
+
+Instead:
+
+CREATE THE COMPLETE PROJECT YOURSELF.
+
+Create all required files.
+
+Write all required source code.
+
+Create all configuration files.
+
+Create all Docker files.
+
+Create all tests.
+
+Create README.
+
+Create deployment configuration.
+
+Then package everything into ONE ZIP FILE.
+
+---
+
+# 4. REQUIRED TECHNOLOGY STACK
+
+Use this stack unless a technically necessary change is required.
+
+## Backend
+
+Python 3.12+
+
+FastAPI
+
+Uvicorn
+
+Pydantic
+
+SQLAlchemy
+
+Alembic
+
+JWT authentication
+
+Argon2 or bcrypt password hashing
+
+## AI / RAG
+
+LangChain
+
+LangGraph
+
+Ollama for local development
+
+Local LLM support
+
+Sentence Transformers
+
+Local embedding model
+
+LLM abstraction layer
+
+Optional OpenAI-compatible provider support
+
+## Vector Search
+
+PostgreSQL
+
+pgvector
+
+## Keyword Search
+
+Elasticsearch
+
+BM25
+
+## Cache / Background Jobs
+
+Redis
+
+Celery
+
+## Document Processing
+
+PyMuPDF
+
+python-docx
+
+pandas
+
+BeautifulSoup for optional URL ingestion
+
+## Frontend
+
+React
+
+TypeScript
+
+Vite
+
+Tailwind CSS
+
+Axios
+
+React Router
+
+## Testing
+
+pytest
+
+httpx
+
+Frontend tests where appropriate
+
+## DevOps
+
+Docker
+
+Docker Compose
+
+GitHub Actions
+
+GitHub
+
+---
+
+# 5. IMPORTANT DEPLOYMENT REQUIREMENT
+
+The project MUST be designed so that it can actually be deployed.
+
+Do NOT design a system that only works on my laptop.
+
+The architecture must separate:
+
+LOCAL DEVELOPMENT
+
+and
+
+PRODUCTION DEPLOYMENT.
+
+For local development:
+
+Use:
+
+* Ollama
+* PostgreSQL
+* pgvector
+* Redis
+* Elasticsearch
+* Celery
+* FastAPI
+* React
+
+For production:
+
+Use realistic managed/cloud services where required.
+
+If Ollama cannot realistically be hosted on the selected free deployment platform, provide a production LLM provider abstraction and support an API-based model provider through environment variables.
+
+DO NOT hardcode any API key.
+
+DO NOT claim that a service is permanently free if it is not.
+
+If a service requires payment or has usage limits, clearly document it.
+
+The project must still work locally using Ollama.
+
+---
+
+# 6. LIVE DEMO REQUIREMENT
+
+The final project must be prepared for a real live web demo.
+
+The live application should allow a recruiter to:
+
+1. Open the website.
+2. Register.
+3. Login.
+4. Upload a sample PDF.
+5. Wait for processing.
+6. Open chat.
+7. Ask a question.
+8. Receive an AI answer.
+9. See document citations.
+10. Continue chatting.
+11. View conversation history.
+
+The frontend and backend should be deployable.
+
+Use an appropriate deployment architecture.
+
+Do not assume GitHub alone can run the complete backend.
+
+GitHub must be used for:
+
+* Source code
+* README
+* GitHub Actions
+* Project documentation
+* Live Demo link
+
+The actual backend/frontend services should be deployed to appropriate hosting platforms.
+
+---
+
+# 7. DEPLOYMENT ARCHITECTURE
+
+Prepare the project for this general production architecture:
+
+GitHub
+|
++--------------------+
+|                    |
+v                    v
+Frontend Hosting     Backend Hosting
+|                    |
+|                    v
+|               FastAPI
+|                    |
+|          +---------+---------+
+|          |         |         |
+|          v         v         v
+|      PostgreSQL  Redis   Elasticsearch
+|          |
+|          v
+|       pgvector
+|
+v
+Live Website
+
+The exact hosting providers may be selected based on current availability and suitability.
+
+Prefer services with free tiers or low-cost options where realistically possible.
+
+Do not make unrealistic claims about free hosting.
+
+---
+
+# 8. PROJECT ARCHITECTURE
+
+Build this architecture:
+
+```
+                     REACT FRONTEND
+                           |
+                           v
+                     FASTAPI BACKEND
+                           |
+                     AUTHENTICATION
+                           |
+                     QUERY ROUTER
+                           |
+          +----------------+----------------+
+          |                |                |
+          v                v                v
+   RETRIEVAL AGENT   ANALYTICS AGENT   GENERAL AGENT
+          |
+          v
+    HYBRID RETRIEVAL
+      /          \
+     /            \
+    v              v
+```
+
+pgvector       Elasticsearch
+\              /
+\            /
+v          v
+RESULT FUSION
+|
+v
+RERANKER
+|
+v
+ANSWER AGENT
+|
+v
+VERIFICATION AGENT
+|
+v
+FINAL RESPONSE
+|
+v
+CITATIONS
+
+DOCUMENT PROCESSING:
+
+User
+↓
+React
+↓
+FastAPI
+↓
+File validation
+↓
+File storage
+↓
+Celery
+↓
+Document parser
+↓
+Text extraction
+↓
+Chunking
+↓
+Embedding generation
+↓
+PostgreSQL + pgvector
+↓
+Elasticsearch indexing
+↓
+Processing complete
+
+Redis:
+
+* Celery broker
+* caching where useful
+
+---
+
+# 9. USER ROLES
+
+Implement:
+
+## USER
+
+Can:
+
+* Register
+* Login
+* Upload documents
+* View own documents
+* Delete own documents
+* Search own documents
+* Ask questions
+* Create conversations
+* View conversations
+* Delete conversations
+* View citations
+
+## ADMIN
+
+Can:
+
+* View users
+* View documents
+* View processing status
+* View system statistics
+* View RAG statistics
+* View evaluation metrics
+* Delete inappropriate documents
+* Monitor system health
+
+Implement proper role-based authorization.
+
+A normal user MUST NEVER retrieve another user's private documents.
+
+---
+
+# 10. AUTHENTICATION
+
+Implement secure authentication.
+
+Features:
+
+* Registration
+* Login
+* Password hashing
+* JWT access token
+* Protected API routes
+* Role-based access
+* Current-user endpoint
+* Logout handling
+
+Use environment variables for:
+
+JWT_SECRET
+
+JWT_ALGORITHM
+
+ACCESS_TOKEN_EXPIRE_MINUTES
+
+Never hardcode secrets.
+
+---
+
+# 11. DATABASE
+
+Use PostgreSQL.
+
+Enable pgvector.
+
+Use SQLAlchemy.
+
+Use Alembic.
+
+Create these tables:
+
+## users
+
+* id
+* email
+* hashed_password
+* role
+* created_at
+* updated_at
+
+## documents
+
+* id
+* owner_id
+* filename
+* original_filename
+* file_type
+* file_size
+* storage_path
+* processing_status
+* page_count
+* chunk_count
+* processing_error
+* created_at
+* updated_at
+
+## document_chunks
+
+* id
+* document_id
+* owner_id
+* chunk_index
+* content
+* page_number
+* embedding
+* metadata
+* created_at
+
+## conversations
+
+* id
+* user_id
+* title
+* created_at
+* updated_at
+
+## messages
+
+* id
+* conversation_id
+* role
+* content
+* sources
+* created_at
+
+## rag_queries
+
+* id
+* user_id
+* conversation_id
+* query
+* retrieval_time
+* generation_time
+* total_time
+* created_at
+
+## evaluation_results
+
+* id
+* query_id
+* metric_name
+* metric_value
+* created_at
+
+Add appropriate:
+
+* primary keys
+* foreign keys
+* indexes
+* constraints
+* relationships
+
+---
+
+# 12. DOCUMENT UPLOAD
+
+Support:
+
+PDF
+
+DOCX
+
+TXT
+
+CSV
+
+Validate:
+
+* extension
+* MIME type
+* file size
+* filename
+
+Use secure filenames.
+
+Store document metadata.
+
+Processing status must support:
+
+UPLOADED
+
+PROCESSING
+
+COMPLETED
+
+FAILED
+
+---
+
+# 13. DOCUMENT PROCESSING
+
+Implement asynchronous processing.
+
+Flow:
+
+UPLOAD
+
+↓
+
+VALIDATE
+
+↓
+
+SAVE METADATA
+
+↓
+
+CELERY JOB
+
+↓
+
+EXTRACT TEXT
+
+↓
+
+CLEAN TEXT
+
+↓
+
+CHUNK
+
+↓
+
+GENERATE EMBEDDINGS
+
+↓
+
+STORE IN PGVECTOR
+
+↓
+
+INDEX IN ELASTICSEARCH
+
+↓
+
+UPDATE STATUS
+
+↓
+
+COMPLETED
+
+If anything fails:
+
+FAILED
+
+and store a useful error message.
+
+Never leave jobs permanently stuck in PROCESSING.
+
+---
+
+# 14. PDF PROCESSING
+
+Use PyMuPDF.
+
+Extract:
+
+* text
+* page number
+* document metadata
+
+Preserve page numbers.
+
+This is required for citations.
+
+Do not invent page numbers.
+
+---
+
+# 15. DOCX PROCESSING
+
+Use python-docx.
+
+Extract paragraphs and useful metadata.
+
+---
+
+# 16. TXT PROCESSING
+
+Read text safely.
+
+Handle encoding errors properly.
+
+---
+
+# 17. CSV PROCESSING
+
+Use pandas.
+
+Convert rows into searchable text while preserving column names.
+
+---
+
+# 18. CHUNKING
+
+Implement configurable chunking.
+
+Environment variables:
+
+CHUNK_SIZE
+
+CHUNK_OVERLAP
+
+Use reasonable defaults.
+
+Every chunk must store:
+
+* document_id
+* owner_id
+* filename
+* page_number
+* chunk_index
+* content
+* metadata
+
+---
+
+# 19. EMBEDDINGS
+
+Create an EmbeddingService abstraction.
+
+Support local Sentence Transformer embeddings.
+
+Implement:
+
+embed_text()
+
+embed_documents()
+
+Use batching where practical.
+
+The embedding model must be configurable.
+
+---
+
+# 20. VECTOR SEARCH
+
+Use pgvector.
+
+Implement:
+
+semantic similarity search
+
+metadata filtering
+
+owner filtering
+
+document filtering
+
+The database query must respect user permissions.
+
+---
+
+# 21. ELASTICSEARCH
+
+Use Elasticsearch.
+
+Create an index for document chunks.
+
+Implement:
+
+BM25
+
+keyword search
+
+phrase search
+
+metadata filtering
+
+owner filtering
+
+---
+
+# 22. HYBRID SEARCH
+
+Implement:
+
+VECTOR SEARCH
+
+*
+
+BM25 SEARCH
+
+=
+
+HYBRID SEARCH
+
+Use a sensible result fusion/ranking method.
+
+Pipeline:
+
+User Query
+
+↓
+
+Semantic Search
+
+*
+
+BM25 Search
+
+↓
+
+Merge
+
+↓
+
+Deduplicate
+
+↓
+
+Rank/Fuse
+
+↓
+
+Rerank
+
+↓
+
+Top-K context
+
+---
+
+# 23. RERANKING
+
+Implement a reranking service abstraction.
+
+Use a local cross-encoder/reranker where practical.
+
+The reranker must receive candidate results and return relevance-ranked results.
+
+Make the model configurable.
+
+---
+
+# 24. RAG
+
+Implement a real RAG pipeline.
+
+Flow:
+
+Question
+
+↓
+
+Query preprocessing
+
+↓
+
+Query routing
+
+↓
+
+Retrieval
+
+↓
+
+Hybrid search
+
+↓
+
+Reranking
+
+↓
+
+Context construction
+
+↓
+
+Prompt
+
+↓
+
+LLM
+
+↓
+
+Verification
+
+↓
+
+Final answer
+
+↓
+
+Citations
+
+---
+
+# 25. LLM
+
+For local development:
+
+Use Ollama.
+
+Make model configurable:
+
+OLLAMA_BASE_URL
+
+LLM_MODEL
+
+For production:
+
+Support an API-based LLM provider through environment variables.
+
+Create an abstraction such as:
+
+LLMService
+
+Do not make the whole project dependent on one provider.
+
+Do not expose API keys.
+
+---
+
+# 26. PROMPTS
+
+Centralize prompts.
+
+Create prompts for:
+
+* query routing
+* answer generation
+* comparison
+* verification
+* general conversation
+
+The answer-generation prompt must instruct:
+
+* Use retrieved context.
+* Do not invent facts.
+* Do not invent citations.
+* If evidence is insufficient, say so.
+* Cite relevant sources.
+* Do not reveal hidden chain-of-thought.
+
+---
+
+# 27. MULTI-AGENT ARCHITECTURE
+
+Use LangGraph.
+
+Create meaningful agents:
+
+## Router Agent
+
+Classifies:
+
+DOCUMENT_RAG
+
+DOCUMENT_COMPARISON
+
+GENERAL_CHAT
+
+ANALYTICS
+
+## Retrieval Agent
+
+Finds relevant document information.
+
+## Comparison Agent
+
+Compares information across documents.
+
+## Answer Agent
+
+Creates the final evidence-based answer.
+
+## Verification Agent
+
+Checks whether the answer is supported by retrieved evidence.
+
+---
+
+# 28. LANGGRAPH WORKFLOW
+
+Implement:
+
+START
+
+↓
+
+ROUTER
+
+↓
+
+Conditional routing
+
+↓
+
+RETRIEVAL
+
+↓
+
+HYBRID SEARCH
+
+↓
+
+RERANKING
+
+↓
+
+ANSWER
+
+↓
+
+VERIFICATION
+
+↓
+
+If supported:
+
+FINAL
+
+If not supported:
+
+RETRIEVE MORE
+
+↓
+
+ANSWER AGAIN
+
+↓
+
+VERIFICATION
+
+↓
+
+FINAL
+
+Set a maximum retry count.
+
+Prevent infinite loops.
+
+---
+
+# 29. DOCUMENT COMPARISON
+
+Support questions like:
+
+"Compare the 2025 employee policy with the 2026 employee policy."
+
+The system should:
+
+* identify relevant documents
+* retrieve evidence
+* compare information
+* generate structured output
+* provide citations
+
+---
+
+# 30. GENERAL CHAT
+
+If a question does not require document retrieval, route it to a general agent.
+
+Do not perform unnecessary retrieval.
+
+---
+
+# 31. CITATIONS
+
+Every document-grounded answer must return real sources.
+
+Example:
+
+{
+"answer": "The annual leave entitlement is 15 days.",
+"sources": [
+{
+"document_id": "123",
+"filename": "Employee_Handbook.pdf",
+"page_number": 23,
+"chunk_id": "456"
+}
+]
+}
+
+The frontend must display citations professionally.
+
+Never fabricate:
+
+* documents
+* pages
+* chunk IDs
+
+---
+
+# 32. CHAT SYSTEM
+
+Implement:
+
+* New conversation
+* Conversation list
+* Conversation title
+* Messages
+* Chat history
+* Delete conversation
+* Source citations
+
+User A must never see User B's conversations.
+
+---
+
+# 33. FRONTEND
+
+Build a professional React + TypeScript + Tailwind application.
+
+Pages:
+
+/login
+
+/register
+
+/dashboard
+
+/documents
+
+/chat
+
+/conversations
+
+/profile
+
+/admin
+
+---
+
+# 34. FRONTEND DESIGN
+
+Use a modern SaaS-style design.
+
+Include:
+
+* Sidebar
+* Header
+* Navigation
+* Dashboard cards
+* Document table
+* Upload interface
+* Processing status
+* Chat interface
+* Citation cards
+* Loading states
+* Error states
+* Empty states
+* Responsive design
+
+Do not make it look like a basic college project.
+
+Do not use Streamlit as the frontend.
+
+---
+
+# 35. DASHBOARD
+
+Display:
+
+* Total documents
+* Completed documents
+* Processing documents
+* Failed documents
+* Total conversations
+* Total questions
+* Recent documents
+* Quick upload
+* Quick chat
+
+---
+
+# 36. DOCUMENT PAGE
+
+Display:
+
+* Upload button
+* Drag-and-drop upload if practical
+* Document list
+* Filename
+* File type
+* File size
+* Status
+* Date
+* Chunk count
+* Delete action
+* Processing error
+
+---
+
+# 37. CHAT PAGE
+
+Create:
+
+LEFT SIDEBAR:
+
+Conversation list
+
+MAIN:
+
+User messages
+
+AI responses
+
+Sources
+
+INPUT:
+
+Question field
+
+Send button
+
+Loading status
+
+Error status
+
+Use useful status messages such as:
+
+"Searching your documents..."
+
+"Ranking relevant sources..."
+
+"Generating answer..."
+
+Do not show hidden chain-of-thought.
+
+---
+
+# 38. ADMIN DASHBOARD
+
+Display:
+
+* Total users
+* Total documents
+* Total chunks
+* Total questions
+* Failed processing jobs
+* Average retrieval time
+* Average generation time
+* System health
+* Basic evaluation metrics
+
+---
+
+# 39. REST API
+
+Implement:
+
+POST /api/auth/register
+
+POST /api/auth/login
+
+GET /api/auth/me
+
+POST /api/documents/upload
+
+GET /api/documents
+
+GET /api/documents/{id}
+
+DELETE /api/documents/{id}
+
+GET /api/documents/{id}/status
+
+POST /api/chat
+
+GET /api/conversations
+
+GET /api/conversations/{id}
+
+DELETE /api/conversations/{id}
+
+GET /api/admin/stats
+
+GET /api/health
+
+Use:
+
+Pydantic schemas
+
+Proper HTTP status codes
+
+Validation
+
+OpenAPI documentation
+
+---
+
+# 40. CELERY + REDIS
+
+Use Celery for document processing.
+
+Redis should act as the broker.
+
+Document processing must not block the API request.
+
+Implement:
+
+job creation
+
+job status
+
+failure handling
+
+retry where appropriate
+
+---
+
+# 41. ERROR HANDLING
+
+Handle:
+
+* Invalid login
+* Invalid token
+* Unauthorized document
+* Missing document
+* Unsupported file
+* File too large
+* Parsing failure
+* Embedding failure
+* LLM failure
+* PostgreSQL failure
+* Redis failure
+* Elasticsearch failure
+* Celery failure
+
+Return clean user-facing error messages.
+
+Never expose stack traces to users.
+
+---
+
+# 42. SECURITY
+
+Implement:
+
+* Password hashing
+* JWT
+* Role-based authorization
+* File validation
+* File size limits
+* Secure filenames
+* CORS
+* Environment variables
+* SQLAlchemy ORM
+* Input validation
+
+Never commit:
+
+.env
+
+passwords
+
+JWT secrets
+
+API keys
+
+private documents
+
+---
+
+# 43. ENVIRONMENT VARIABLES
+
+Create:
+
+.env.example
+
+Include:
+
+DATABASE_URL=
+
+REDIS_URL=
+
+ELASTICSEARCH_URL=
+
+JWT_SECRET=
+
+JWT_ALGORITHM=
+
+ACCESS_TOKEN_EXPIRE_MINUTES=
+
+OLLAMA_BASE_URL=
+
+LLM_MODEL=
+
+EMBEDDING_MODEL=
+
+RERANKER_MODEL=
+
+CHUNK_SIZE=
+
+CHUNK_OVERLAP=
+
+TOP_K=
+
+MAX_UPLOAD_SIZE=
+
+CORS_ORIGINS=
+
+FRONTEND_URL=
+
+Do not put real secrets in the ZIP.
+
+---
+
+# 44. DOCKER
+
+Create:
+
+backend/Dockerfile
+
+frontend/Dockerfile
+
+worker/Dockerfile if needed
+
+docker-compose.yml
+
+Local services:
+
+backend
+
+frontend
+
+postgres
+
+redis
+
+elasticsearch
+
+worker
+
+ollama where practical
+
+Use Docker health checks.
+
+Use correct Docker networking.
+
+Never use localhost between Docker containers.
+
+---
+
+# 45. TESTING
+
+Create automated tests.
+
+Test:
+
+* registration
+* login
+* JWT
+* authorization
+* upload
+* parsing
+* chunking
+* embeddings abstraction
+* vector retrieval
+* keyword retrieval
+* hybrid retrieval
+* API
+* RAG workflow
+
+Mock external LLM calls where appropriate.
+
+Tests should not require paid APIs.
+
+---
+
+# 46. GITHUB ACTIONS
+
+Create:
+
+.github/workflows/ci.yml
+
+CI should:
+
+* install backend dependencies
+* run tests
+* run linting where practical
+* install frontend dependencies
+* build frontend
+* perform basic validation
+
+Do not require paid services for CI.
+
+---
+
+# 47. GITIGNORE
+
+Create a proper .gitignore.
+
+Ignore:
+
+.env
+
+.venv
+
+**pycache**
+
+*.pyc
+
+node_modules
+
+dist
+
+build
+
+uploads
+
+logs
+
+local database data
+
+Docker volumes
+
+Ollama models
+
+Elasticsearch data
+
+Redis data
+
+IDE files
+
+OS files
+
+---
+
+# 48. SAMPLE DOCUMENTS
+
+Create safe public sample documents.
+
+Include examples such as:
+
+Employee Handbook
+
+Leave Policy
+
+Travel Policy
+
+Product Documentation
+
+Finance Policy
+
+These must contain enough information to test:
+
+* simple questions
+* specific questions
+* cross-document questions
+* comparison
+* citations
+
+Do not use confidential company information.
+
+---
+
+# 49. DEMO QUESTIONS
+
+Include these in the README:
+
+"What is the annual leave policy?"
+
+"How many sick leave days are available?"
+
+"What is the travel reimbursement limit?"
+
+"Compare the 2025 and 2026 employee policies."
+
+"What is the approval process?"
+
+"Which document contains the reimbursement policy?"
+
+---
+
+# 50. PROJECT STRUCTURE
+
+Create a clean professional structure.
+
+Example:
+
+enterprise-multi-agent-rag/
+
+├── backend/
+
+│   ├── app/
+
+│   │   ├── api/
+
+│   │   ├── core/
+
+│   │   ├── models/
+
+│   │   ├── schemas/
+
+│   │   ├── repositories/
+
+│   │   ├── services/
+
+│   │   ├── rag/
+
+│   │   ├── agents/
+
+│   │   ├── workers/
+
+│   │   └── main.py
+
+│   ├── tests/
+
+│   ├── requirements.txt
+
+│   └── Dockerfile
+
+├── frontend/
+
+│   ├── src/
+
+│   ├── public/
+
+│   ├── package.json
+
+│   └── Dockerfile
+
+├── worker/
+
+├── sample_documents/
+
+├── docs/
+
+├── scripts/
+
+├── .github/
+
+│   └── workflows/
+
+├── docker-compose.yml
+
+├── .env.example
+
+├── .gitignore
+
+├── README.md
+
+└── LICENSE
+
+You may improve the structure if necessary.
+
+---
+
+# 51. CODE QUALITY
+
+Use:
+
+* type hints
+* clean naming
+* modular architecture
+* separation of concerns
+* error handling
+* logging
+* configuration management
+* reusable services
+* dependency injection where useful
+
+Do not put the entire backend into one file.
+
+Do not create unnecessary complexity.
+
+---
+
+# 52. PACKAGE COMPATIBILITY
+
+This is extremely important.
+
+Use compatible package versions.
+
+Do not blindly copy outdated LangChain/LangGraph examples.
+
+Make sure imports match the package versions selected.
+
+Create a working requirements.txt.
+
+For frontend, create a valid package.json with compatible dependencies.
+
+If an API has changed, use the current compatible API.
+
+---
+
+# 53. WINDOWS 11
+
+The project must be usable on Windows 11.
+
+README must explain:
+
+* Python installation
+* Node.js installation
+* Git installation
+* Docker Desktop
+* Ollama
+* Git
+* PowerShell commands
+* environment setup
+* local startup
+
+Do not assume Linux-only commands.
+
+---
+
+# 54. LOCAL RUNNING
+
+The README must provide exact commands.
+
+Example structure:
+
+1. Extract ZIP.
+2. Open project folder.
+3. Create Python environment.
+4. Install backend dependencies.
+5. Install frontend dependencies.
+6. Create .env.
+7. Start Docker.
+8. Start Ollama.
+9. Pull required local model.
+10. Run migrations.
+11. Start backend.
+12. Start Celery worker.
+13. Start frontend.
+
+Give exact commands appropriate for Windows PowerShell.
+
+---
+
+# 55. OLLAMA
+
+For local development:
+
+Use Ollama.
+
+The README must tell me:
+
+* how to install Ollama
+* how to verify installation
+* how to download the selected model
+* how to verify the model
+* how to configure the project
+
+Do not include Ollama model files inside the ZIP.
+
+---
+
+# 56. PRODUCTION LLM
+
+Create a provider abstraction.
+
+Local:
+
+Ollama
+
+Production:
+
+API-based provider configurable through environment variables.
+
+Do not force a paid provider into the source code.
+
+Do not expose API keys.
+
+---
+
+# 57. DEPLOYMENT
+
+Prepare deployment configuration for:
+
+Frontend
+
+Backend
+
+Database
+
+Redis
+
+Elasticsearch
+
+LLM
+
+The exact provider should be chosen based on current practicality.
+
+The project must document:
+
+* required services
+* environment variables
+* build commands
+* start commands
+* database migration commands
+* CORS configuration
+* frontend API URL
+* backend URL
+* health check URL
+
+---
+
+# 58. LIVE DEMO
+
+After deployment, the README must contain:
+
+# Live Demo
+
+Frontend URL:
+
+[DEPLOYED FRONTEND URL]
+
+Backend API:
+
+[DEPLOYED BACKEND URL]
+
+API Documentation:
+
+[DEPLOYED BACKEND URL]/docs
+
+GitHub:
+
+[REPOSITORY URL]
+
+DO NOT put fake URLs.
+
+Use placeholders until actual deployment URLs are known.
+
+---
+
+# 59. GITHUB README
+
+Create a professional README.
+
+Include:
+
+# Enterprise Multi-Agent RAG Platform
+
+Project description
+
+Problem statement
+
+Features
+
+Architecture
+
+Screenshots section
+
+Tech stack
+
+RAG pipeline
+
+Multi-agent architecture
+
+Database architecture
+
+Local setup
+
+Docker setup
+
+Environment variables
+
+API documentation
+
+Testing
+
+GitHub Actions
+
+Deployment
+
+Live Demo
+
+Security
+
+Limitations
+
+Future improvements
+
+Resume description
+
+---
+
+# 60. GITHUB REPOSITORY
+
+Prepare everything so I can simply:
+
+git init
+
+git add .
+
+git commit
+
+git branch
+
+git remote add origin
+
+git push
+
+The project must not contain:
+
+.env
+
+secrets
+
+API keys
+
+private documents
+
+large model files
+
+database volumes
+
+node_modules
+
+Python virtual environment
+
+---
+
+# 61. GITHUB PAGES CLARIFICATION
+
+Do NOT incorrectly claim that GitHub Pages can host the entire FastAPI + PostgreSQL + Redis + Elasticsearch + Celery application.
+
+If GitHub Pages is used, it should only be used for a static frontend if technically suitable.
+
+The complete backend must be deployed on an appropriate backend/cloud platform.
+
+The GitHub repository README must contain the actual live application URL after deployment.
+
+---
+
+# 62. ZIP FILE
+
+This is one of the MOST IMPORTANT requirements.
+
+After generating the complete project:
+
+1. Create the complete directory.
+2. Create every source file.
+3. Create every configuration file.
+4. Create Docker files.
+5. Create tests.
+6. Create README.
+7. Create sample documents.
+8. Create GitHub Actions.
+9. Check imports.
+10. Check project structure.
+11. Run available automated tests.
+12. Fix errors.
+13. Remove unnecessary generated files.
+14. Remove secrets.
+15. Remove caches.
+16. Remove node_modules.
+17. Remove Python virtual environments.
+18. Remove database volumes.
+19. Remove model files.
+20. Create ONE ZIP file.
+
+The ZIP must contain:
+
+enterprise-multi-agent-rag/
+
+and everything required for the project source.
+
+---
+
+# 63. ZIP MUST NOT CONTAIN
+
+Never include:
+
+.env
+
+API keys
+
+passwords
+
+JWT secrets
+
+node_modules
+
+.venv
+
+**pycache**
+
+database files
+
+Docker volumes
+
+Elasticsearch data
+
+Redis data
+
+Ollama model files
+
+private documents
+
+large cache folders
+
+---
+
+# 64. BEFORE GIVING ZIP
+
+Perform a project consistency check.
+
+Check:
+
+* backend imports
+* frontend imports
+* package versions
+* environment variables
+* API routes
+* frontend API configuration
+* database models
+* migrations
+* Docker services
+* Docker networking
+* Celery configuration
+* Redis configuration
+* Elasticsearch configuration
+* pgvector configuration
+* authentication
+* authorization
+* CORS
+* tests
+* README commands
+
+If you can execute tests, execute them.
+
+If something cannot be executed in your environment, clearly say:
+
+"NOT VERIFIED"
+
+Do not falsely claim it works.
+
+---
+
+# 65. DO NOT GENERATE FAKE RESULTS
+
+Never say:
+
+"All tests passed"
+
+unless you actually ran them.
+
+Never say:
+
+"Deployment successful"
+
+unless it actually happened.
+
+Never say:
+
+"Live demo available"
+
+unless a real URL exists.
+
+Never invent:
+
+* GitHub URLs
+* deployment URLs
+* API keys
+* passwords
+* benchmark numbers
+* accuracy numbers
+
+---
+
+# 66. AFTER ZIP CREATION
+
+Give me:
+
+## 1. ZIP FILE
+
+A direct downloadable ZIP file.
+
+## 2. ZIP CONTENT
+
+Explain what is inside.
+
+## 3. LOCAL SETUP
+
+Exact Windows 11 instructions.
+
+## 4. RUNNING
+
+Exact commands.
+
+## 5. GITHUB
+
+Exact commands to push the extracted project.
+
+## 6. DEPLOYMENT
+
+Exact deployment steps.
+
+## 7. LIVE DEMO
+
+Tell me exactly where the live URL goes in GitHub README.
+
+## 8. TESTING
+
+Exact test commands.
+
+## 9. ENVIRONMENT VARIABLES
+
+Complete list.
+
+## 10. COMMON ERRORS
+
+Problem → Cause → Solution.
+
+---
+
+# 67. GITHUB PUSH INSTRUCTIONS
+
+After giving the ZIP, provide exact commands like:
+
+cd enterprise-multi-agent-rag
+
+git init
+
+git add .
+
+git commit -m "Initial commit: Enterprise Multi-Agent RAG Platform"
+
+git branch -M main
+
+git remote add origin YOUR_GITHUB_REPOSITORY_URL
+
+git push -u origin main
+
+Do NOT invent my repository URL.
+
+Tell me exactly where I need to replace it with my own GitHub URL.
+
+---
+
+# 68. DEPLOYMENT INSTRUCTIONS
+
+After the GitHub setup, give a separate deployment section.
+
+Explain:
+
+1. Create deployment accounts.
+2. Connect GitHub repository.
+3. Deploy backend.
+4. Configure backend environment variables.
+5. Deploy database.
+6. Configure pgvector.
+7. Configure Redis.
+8. Configure Elasticsearch.
+9. Configure production LLM.
+10. Deploy frontend.
+11. Set frontend API URL.
+12. Configure CORS.
+13. Run database migrations.
+14. Test health endpoint.
+15. Test login.
+16. Test document upload.
+17. Test RAG.
+18. Test citations.
+19. Put final URL in README.
+
+Use currently realistic deployment options.
+
+If a component cannot be hosted on a free tier, clearly explain it.
+
+Do not pretend everything is free.
+
+---
+
+# 69. LIVE DEMO TEST
+
+Before calling the project deployment-ready, provide a manual verification checklist:
+
+[ ] Website opens
+
+[ ] Register works
+
+[ ] Login works
+
+[ ] Dashboard works
+
+[ ] Upload works
+
+[ ] Document processing works
+
+[ ] Document status changes to COMPLETED
+
+[ ] Chat works
+
+[ ] RAG answer works
+
+[ ] Citation works
+
+[ ] Conversation history works
+
+[ ] Logout works
+
+[ ] Unauthorized access is blocked
+
+[ ] Admin dashboard works
+
+[ ] Backend health works
+
+[ ] No secrets exposed
+
+---
+
+# 70. RESUME VALUE
+
+The project must be suitable for a resume.
+
+After completion, generate a strong project description.
+
+Title:
+
+Enterprise Multi-Agent RAG Platform
+
+Mention only features that actually exist.
+
+Create:
+
+* 4 resume bullet points
+* 1 short project description
+* technology stack line
+* GitHub link placeholder
+* Live Demo link placeholder
+
+Do not invent metrics.
+
+---
+
+# 71. INTERVIEW PREPARATION
+
+After the project is complete, provide interview questions based specifically on this implementation.
+
+Cover:
+
+Python
+
+FastAPI
+
+REST APIs
+
+JWT
+
+PostgreSQL
+
+SQLAlchemy
+
+Alembic
+
+pgvector
+
+Embeddings
+
+Vector search
+
+RAG
+
+Chunking
+
+Semantic search
+
+Elasticsearch
+
+BM25
+
+Hybrid search
+
+Reranking
+
+LangChain
+
+LangGraph
+
+Agents
+
+Multi-agent architecture
+
+Ollama
+
+LLM
+
+Prompt engineering
+
+Redis
+
+Celery
+
+React
+
+TypeScript
+
+Docker
+
+Git
+
+GitHub
+
+CI/CD
+
+Deployment
+
+System design
+
+For each:
+
+WHAT?
+
+WHY DID WE USE IT?
+
+WHERE IS IT USED?
+
+HOW DOES IT WORK?
+
+INTERVIEW QUESTION
+
+SHORT INTERVIEW ANSWER
+
+---
+
+# 72. FINAL QUALITY REQUIREMENT
+
+The final result must feel like a real SaaS application.
+
+NOT:
+
+A simple PDF chatbot.
+
+NOT:
+
+A single Python script.
+
+NOT:
+
+A Streamlit demo.
+
+NOT:
+
+A collection of disconnected code snippets.
+
+NOT:
+
+Fake AI.
+
+NOT:
+
+Fake citations.
+
+NOT:
+
+A project that only works on localhost.
+
+It should demonstrate:
+
+Python
+
+FastAPI
+
+React
+
+RAG
+
+LLMs
+
+LangChain
+
+LangGraph
+
+Embeddings
+
+Vector Search
+
+Hybrid Search
+
+BM25
+
+Reranking
+
+Multi-Agent Architecture
+
+PostgreSQL
+
+pgvector
+
+Elasticsearch
+
+Redis
+
+Celery
+
+JWT
+
+Docker
+
+GitHub
+
+CI/CD
+
+Deployment
+
+---
+
+# 73. FINAL OUTPUT ORDER
+
+When you finish, provide information in exactly this order:
+
+1. PROJECT ZIP
+2. Project structure
+3. Technologies used
+4. What the project does
+5. Local Windows 11 setup
+6. How to run locally
+7. How to test
+8. How to push to GitHub
+9. How to deploy
+10. How to configure production environment
+11. How to test live demo
+12. GitHub README live-demo setup
+13. Common errors
+14. Resume description
+15. Interview questions
+16. Future improvements
+
+---
+
+# 74. MOST IMPORTANT INSTRUCTION
+
+I am NOT asking you to teach me how to build the application.
+
+I am asking you to BUILD THE APPLICATION.
+
+I want:
+
+COMPLETE PROJECT
++
+COMPLETE SOURCE CODE
++
+COMPLETE CONFIGURATION
++
+COMPLETE TESTS
++
+COMPLETE DOCKER SETUP
++
+COMPLETE README
++
+COMPLETE DEPLOYMENT PREPARATION
++
+ONE ZIP FILE
+
+I will then:
+
+1. Download the ZIP.
+2. Extract it.
+3. Create my GitHub repository.
+4. Push the project.
+5. Deploy it.
+6. Put the live demo URL in the GitHub README.
+7. Use it on my resume.
+
+Do not stop at architecture.
+
+Do not give me a tutorial instead of the project.
+
+Do not ask me to create files manually.
+
+Create the project and package it into one ZIP.
+
+START BUILDING THE COMPLETE PROJECT NOW.

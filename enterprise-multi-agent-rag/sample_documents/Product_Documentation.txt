@@ -1,0 +1,3 @@
+EnterpriseRAG Demo Product Documentation
+
+The EnterpriseRAG demo product supports PDF, DOCX, TXT, and CSV ingestion. Search combines semantic similarity with BM25 keyword retrieval and reranking. Document-grounded chat displays source filename, page number when available, and chunk identifier.
