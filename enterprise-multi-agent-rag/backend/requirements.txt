@@ -24,3 +24,4 @@ langgraph==1.2.11
 pytest>=8.4,<9
 pytest-asyncio>=1.1,<2
 ruff>=0.12,<1
+sentence-transformers==5.7.0
