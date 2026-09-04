@@ -1,22 +1,47 @@
 from functools import lru_cache
-from sentence_transformers import CrossEncoder
+import re
+
 from app.core.config import settings
 from app.services.search import SearchHit
 
+
 class RerankerService:
-    def __init__(self): self._model = None
-    @property
-    def model(self):
-        if self._model is None: self._model = CrossEncoder(settings.reranker_model)
-        return self._model
-    def rerank(self, query: str, hits: list[SearchHit], top_k: int | None = None) -> list[SearchHit]:
-        if not hits: return []
+    def __init__(self):
+        pass
+
+    def _score(self, query: str, content: str) -> float:
+        query_words = set(re.findall(r"\b\w+\b", query.lower()))
+        content_words = set(re.findall(r"\b\w+\b", content.lower()))
+
+        if not query_words:
+            return 0.0
+
+        return len(query_words & content_words) / len(query_words)
+
+    def rerank(
+        self,
+        query: str,
+        hits: list[SearchHit],
+        top_k: int | None = None,
+    ) -> list[SearchHit]:
+        if not hits:
+            return []
+
+        limit = top_k or settings.top_k
+
         try:
-            scores = self.model.predict([(query, h.content) for h in hits]).tolist()
-            ranked = sorted(zip(hits, scores), key=lambda x: x[1], reverse=True)
-            return [SearchHit(**{**h.__dict__, "score": float(s)}) for h, s in ranked[:top_k or settings.top_k]]
+            ranked = sorted(
+                hits,
+                key=lambda h: self._score(query, h.content),
+                reverse=True,
+            )
+
+            return ranked[:limit]
+
         except Exception:
-            return hits[:top_k or settings.top_k]
+            return hits[:limit]
+
 
 @lru_cache
-def get_reranker(): return RerankerService()
+def get_reranker():
+    return RerankerService()
