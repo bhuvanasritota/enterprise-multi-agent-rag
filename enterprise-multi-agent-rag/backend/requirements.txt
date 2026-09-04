@@ -25,3 +25,4 @@ langgraph==1.2.11
 pytest>=8.4,<9
 pytest-asyncio>=1.1,<2
 ruff>=0.12,<1
+psycopg2-binary
